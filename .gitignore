@@ -204,6 +204,7 @@ logs
 # agent
 .envrc
 /workspace
+/workspace_
 /_test_workspace
 /debug
 cache
@@ -217,3 +218,4 @@ containers/agnostic_sandbox
 # swe-bench-eval
 image_build_logs
 run_instance_logs
+node_modules
