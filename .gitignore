@@ -219,3 +219,4 @@ containers/agnostic_sandbox
 image_build_logs
 run_instance_logs
 node_modules
+out
