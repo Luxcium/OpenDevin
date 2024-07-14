@@ -1,0 +1,189 @@
+Docker CE Stable - x86_64                        73 kB/s | 3.5 kB     00:00    
+Fedora 40 - x86_64                               92 kB/s |  29 kB     00:00    
+Fedora 40 openh264 (From Cisco) - x86_64        6.7 kB/s | 989  B     00:00    
+Fedora 40 - x86_64 - Updates                    201 kB/s |  28 kB     00:00    
+google-chrome                                    12 kB/s | 1.3 kB     00:00    
+RPM Fusion for Fedora 40 - Free                  26 kB/s | 3.6 kB     00:00    
+RPM Fusion for Fedora 40 - Free - Updates       4.9 kB/s | 3.9 kB     00:00    
+RPM Fusion for Fedora 40 - Nonfree - NVIDIA Dri  21 kB/s | 6.5 kB     00:00    
+RPM Fusion for Fedora 40 - Nonfree - Steam      168 kB/s | 6.2 kB     00:00    
+Dépendances résolues.
+================================================================================
+ Paquet                             Architecture
+                                            Version             Dépôt     Taille
+================================================================================
+Installation:
+ kernel                             x86_64  6.9.8-200.fc40      updates   170 k
+ kernel-core                        x86_64  6.9.8-200.fc40      updates    17 M
+ kernel-modules                     x86_64  6.9.8-200.fc40      updates    63 M
+ kernel-modules-core                x86_64  6.9.8-200.fc40      updates    37 M
+ kernel-modules-extra               x86_64  6.9.8-200.fc40      updates   2.9 M
+Mise à jour:
+ OpenImageIO                        x86_64  2.5.13.0-1.fc40     updates   2.8 M
+ amd-gpu-firmware                   noarch  20240709-1.fc40     updates    22 M
+ amd-ucode-firmware                 noarch  20240709-1.fc40     updates   245 k
+ atheros-firmware                   noarch  20240709-1.fc40     updates    26 M
+ bluedevil                          x86_64  6.1.2-1.fc40        updates   629 k
+ bluez                              x86_64  5.77-1.fc40         updates   1.1 M
+ bluez-cups                         x86_64  5.77-1.fc40         updates    31 k
+ bluez-libs                         x86_64  5.77-1.fc40         updates    83 k
+ bluez-obexd                        x86_64  5.77-1.fc40         updates   138 k
+ brcmfmac-firmware                  noarch  20240709-1.fc40     updates   9.6 M
+ breeze-cursor-theme                noarch  6.1.2-1.fc40        updates   1.3 M
+ breeze-gtk                         noarch  6.1.2-1.fc40        updates   9.5 k
+ breeze-gtk-common                  noarch  6.1.2-1.fc40        updates   315 k
+ breeze-gtk-gtk2                    noarch  6.1.2-1.fc40        updates    23 k
+ breeze-gtk-gtk3                    noarch  6.1.2-1.fc40        updates    29 k
+ breeze-gtk-gtk4                    noarch  6.1.2-1.fc40        updates    27 k
+ cirrus-audio-firmware              noarch  20240709-1.fc40     updates   1.1 M
+ emacs-filesystem                   noarch  1:29.4-5.fc40       updates   8.8 k
+ firefox                            x86_64  128.0-1.fc40        updates    70 M
+ firefox-langpacks                  x86_64  128.0-1.fc40        updates    47 M
+ flatpak-kcm                        x86_64  6.1.2-1.fc40        updates   164 k
+ frei0r-plugins                     x86_64  2.3.3-1.fc40        updates   731 k
+ gdb                                x86_64  14.2-3.fc40         updates   143 k
+ gdb-headless                       x86_64  14.2-3.fc40         updates   4.9 M
+ git-lfs                            x86_64  3.5.1-1.fc40        updates   4.0 M
+ intel-audio-firmware               noarch  20240709-1.fc40     updates   3.2 M
+ intel-gpu-firmware                 noarch  20240709-1.fc40     updates   8.8 M
+ isomd5sum                          x86_64  1:1.2.5-1.fc40      updates    31 k
+ iwlegacy-firmware                  noarch  20240709-1.fc40     updates   152 k
+ iwlwifi-dvm-firmware               noarch  20240709-1.fc40     updates   1.9 M
+ iwlwifi-mvm-firmware               noarch  20240709-1.fc40     updates    54 M
+ jxl-pixbuf-loader                  x86_64  1:0.8.3-1.fc40      updates    61 k
+ kactivitymanagerd                  x86_64  6.1.2-1.fc40        updates   307 k
+ kde-cli-tools                      x86_64  6.1.2-1.fc40        updates   867 k
+ kde-gtk-config                     x86_64  6.1.2-1.fc40        updates   129 k
+ kdecoration                        x86_64  6.1.2-1.fc40        updates   113 k
+ kdeplasma-addons                   x86_64  6.1.2-1.fc40        updates   1.9 M
+ kdesu                              x86_64  1:6.1.2-1.fc40      updates   258 k
+ kernel-tools                       x86_64  6.9.8-200.fc40      updates   433 k
+ kernel-tools-libs                  x86_64  6.9.8-200.fc40      updates   182 k
+ kglobalacceld                      x86_64  6.1.2-1.fc40        updates   139 k
+ kinfocenter                        x86_64  6.1.2-1.fc40        updates   1.0 M
+ kmenuedit                          x86_64  6.1.2-1.fc40        updates   1.1 M
+ kpipewire                          x86_64  6.1.2-1.fc40        updates   190 k
+ krb5-libs                          x86_64  1.21.3-1.fc40       updates   757 k
+ kscreen                            x86_64  1:6.1.2-1.fc40      updates   415 k
+ kscreenlocker                      x86_64  6.1.2-1.fc40        updates   325 k
+ ksshaskpass                        x86_64  6.1.2-1.fc40        updates    67 k
+ ksystemstats                       x86_64  6.1.2-1.fc40        updates   319 k
+ kwayland                           x86_64  6.1.2-1.fc40        updates   232 k
+ kwayland-integration               x86_64  6.1.2-1.fc40        updates    69 k
+ kwin                               x86_64  6.1.2-1.fc40        updates    13 k
+ kwin-common                        x86_64  6.1.2-1.fc40        updates   3.6 M
+ kwin-libs                          x86_64  6.1.2-1.fc40        updates   2.2 M
+ kwin-wayland                       x86_64  6.1.2-1.fc40        updates   514 k
+ kwrited                            x86_64  6.1.2-1.fc40        updates    41 k
+ layer-shell-qt                     x86_64  6.1.2-1.fc40        updates    72 k
+ libadwaita                         x86_64  1.5.2-1.fc40        updates   586 k
+ libertas-firmware                  noarch  20240709-1.fc40     updates   1.3 M
+ libgexiv2                          x86_64  0.14.3-1.fc40       updates   103 k
+ libjxl                             x86_64  1:0.8.3-1.fc40      updates   1.2 M
+ libkscreen                         x86_64  6.1.2-1.fc40        updates   349 k
+ libksysguard                       x86_64  6.1.2-1.fc40        updates   763 k
+ libksysguard-common                x86_64  6.1.2-1.fc40        updates    58 k
+ libkworkspace6                     x86_64  6.1.2-2.fc40        updates   145 k
+ libplasma                          x86_64  6.1.2-1.fc40        updates   2.4 M
+ libvpx                             x86_64  1.14.1-1.fc40       updates   1.2 M
+ linux-firmware                     noarch  20240709-1.fc40     updates    36 M
+ linux-firmware-whence              noarch  20240709-1.fc40     updates    61 k
+ mediawriter                        x86_64  5.1.2-1.fc40        updates   930 k
+ mesa-dri-drivers                   x86_64  24.1.2-8.fc40       updates    26 M
+ mesa-filesystem                    x86_64  24.1.2-8.fc40       updates    21 k
+ mesa-libEGL                        x86_64  24.1.2-8.fc40       updates   141 k
+ mesa-libGL                         x86_64  24.1.2-8.fc40       updates   177 k
+ mesa-libgbm                        x86_64  24.1.2-8.fc40       updates    48 k
+ mesa-libglapi                      x86_64  24.1.2-8.fc40       updates    51 k
+ mesa-va-drivers                    x86_64  24.1.2-8.fc40       updates   4.0 M
+ mesa-vulkan-drivers                x86_64  24.1.2-8.fc40       updates    17 M
+ mt7xxx-firmware                    noarch  20240709-1.fc40     updates    12 M
+ nmap                               x86_64  4:7.92-2.fc40       updates   5.6 M
+ nmap-ncat                          x86_64  4:7.92-2.fc40       updates   223 k
+ nvidia-gpu-firmware                noarch  20240709-1.fc40     updates    38 M
+ nxpwireless-firmware               noarch  20240709-1.fc40     updates   933 k
+ ocean-sound-theme                  noarch  6.1.2-1.fc40        updates   1.1 M
+ openshadinglanguage-libs           x86_64  1.13.10.0-3.fc40    updates   1.3 M
+ pam-kwallet                        x86_64  6.1.2-1.fc40        updates    23 k
+ plasma-activities                  x86_64  6.1.2-1.fc40        updates   157 k
+ plasma-activities-stats            x86_64  6.1.2-1.fc40        updates   120 k
+ plasma-breeze                      x86_64  6.1.2-1.fc40        updates   264 k
+ plasma-breeze-common               noarch  6.1.2-1.fc40        updates    49 M
+ plasma-breeze-qt5                  x86_64  6.1.2-1.fc40        updates   202 k
+ plasma-breeze-qt6                  x86_64  6.1.2-1.fc40        updates   227 k
+ plasma-browser-integration         x86_64  6.1.2-1.fc40        updates   222 k
+ plasma-desktop                     x86_64  6.1.2-1.fc40        updates    12 M
+ plasma-desktop-doc                 noarch  6.1.2-1.fc40        updates   4.7 M
+ plasma-discover                    x86_64  6.1.2-1.fc40        updates   456 k
+ plasma-discover-flatpak            x86_64  6.1.2-1.fc40        updates   225 k
+ plasma-discover-libs               x86_64  6.1.2-1.fc40        updates   717 k
+ plasma-discover-notifier           x86_64  6.1.2-1.fc40        updates   101 k
+ plasma-discover-offline-updates    x86_64  6.1.2-1.fc40        updates    12 k
+ plasma-discover-packagekit         x86_64  6.1.2-1.fc40        updates   212 k
+ plasma-disks                       x86_64  6.1.2-1.fc40        updates   212 k
+ plasma-drkonqi                     x86_64  6.1.2-1.fc40        updates   765 k
+ plasma-integration                 x86_64  6.1.2-1.fc40        updates   208 k
+ plasma-integration-qt5             x86_64  6.1.2-1.fc40        updates   146 k
+ plasma-lookandfeel-fedora          noarch  6.1.2-2.fc40        updates   430 k
+ plasma-milou                       x86_64  6.1.2-1.fc40        updates   148 k
+ plasma-nm                          x86_64  6.1.2-1.fc40        updates   1.1 M
+ plasma-nm-l2tp                     x86_64  6.1.2-1.fc40        updates   156 k
+ plasma-nm-openconnect              x86_64  6.1.2-1.fc40        updates   181 k
+ plasma-nm-openswan                 x86_64  6.1.2-1.fc40        updates    68 k
+ plasma-nm-openvpn                  x86_64  6.1.2-1.fc40        updates   229 k
+ plasma-nm-pptp                     x86_64  6.1.2-1.fc40        updates   100 k
+ plasma-nm-vpnc                     x86_64  6.1.2-1.fc40        updates   116 k
+ plasma-pa                          x86_64  6.1.2-1.fc40        updates   358 k
+ plasma-print-manager               x86_64  6.1.2-1.fc40        updates   528 k
+ plasma-print-manager-libs          x86_64  6.1.2-1.fc40        updates   198 k
+ plasma-systemmonitor               x86_64  6.1.2-1.fc40        updates   532 k
+ plasma-systemsettings              x86_64  6.1.2-1.fc40        updates   436 k
+ plasma-thunderbolt                 x86_64  6.1.2-1.fc40        updates   202 k
+ plasma-vault                       x86_64  6.1.2-1.fc40        updates   423 k
+ plasma-welcome                     x86_64  6.1.2-1.fc40        updates   799 k
+ plasma-workspace                   x86_64  6.1.2-2.fc40        updates    16 M
+ plasma-workspace-common            x86_64  6.1.2-2.fc40        updates    43 k
+ plasma-workspace-geolocation       x86_64  6.1.2-2.fc40        updates    40 k
+ plasma-workspace-geolocation-libs  x86_64  6.1.2-2.fc40        updates    35 k
+ plasma-workspace-libs              x86_64  6.1.2-2.fc40        updates   3.1 M
+ plasma-workspace-wallpapers        noarch  6.1.2-1.fc40        updates    96 M
+ plasma-workspace-wayland           x86_64  6.1.2-2.fc40        updates    94 k
+ plasma5support                     x86_64  6.1.2-1.fc40        updates   222 k
+ polkit-kde                         x86_64  6.1.2-1.fc40        updates   112 k
+ powerdevil                         x86_64  6.1.2-1.fc40        updates   1.2 M
+ python3-boto3                      noarch  1.34.141-1.fc40     updates   382 k
+ python3-botocore                   noarch  1.34.141-1.fc40     updates   7.1 M
+ python3-openimageio                x86_64  2.5.13.0-1.fc40     updates   570 k
+ python3-peewee                     x86_64  3.17.5-1.fc40       updates   552 k
+ python3-typing-extensions          noarch  4.12.2-2.fc40       updates    89 k
+ qqc2-breeze-style                  x86_64  6.1.2-1.fc40        updates   458 k
+ qt5-qtwebengine                    x86_64  5.15.17-1.fc40      updates    54 M
+ qt6-qtbase                         x86_64  6.7.2-3.fc40        updates   4.1 M
+ qt6-qtbase-common                  noarch  6.7.2-3.fc40        updates   7.9 k
+ qt6-qtbase-gui                     x86_64  6.7.2-3.fc40        updates   7.4 M
+ qt6-qtbase-mysql                   x86_64  6.7.2-3.fc40        updates    47 k
+ qt6-qtwayland                      x86_64  6.7.2-2.fc40        updates   1.1 M
+ realtek-firmware                   noarch  20240709-1.fc40     updates   2.8 M
+ sddm-breeze                        noarch  6.1.2-1.fc40        updates   1.2 M
+ sddm-kcm                           x86_64  6.1.2-1.fc40        updates   193 k
+ sddm-wayland-plasma                noarch  6.1.2-2.fc40        updates    17 k
+ tiwilink-firmware                  noarch  20240709-1.fc40     updates   4.6 M
+ xdg-desktop-portal-kde             x86_64  6.1.2-1.fc40        updates   478 k
+ xmlsec1                            x86_64  1:1.2.39-2.fc40     updates   185 k
+ xmlsec1-nss                        x86_64  1:1.2.39-2.fc40     updates    71 k
+ xmlsec1-openssl                    x86_64  1:1.2.39-2.fc40     updates    91 k
+ xorg-x11-server-Xwayland           x86_64  24.1.1-1.fc40       updates   1.0 M
+Suppression:
+ kernel                             x86_64  6.9.4-200.fc40      @updates    0  
+ kernel-core                        x86_64  6.9.4-200.fc40      @updates   69 M
+ kernel-modules                     x86_64  6.9.4-200.fc40      @updates   61 M
+ kernel-modules-core                x86_64  6.9.4-200.fc40      @updates   36 M
+ kernel-modules-extra               x86_64  6.9.4-200.fc40      @updates  2.6 M
+
+Résumé de la transaction
+================================================================================
+Installer          5 Paquets
+Mettre à niveau  154 Paquets
+Supprimer          5 Paquets
+
+Taille totale des téléchargements : 826 M

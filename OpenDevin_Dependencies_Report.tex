@@ -1,0 +1,871 @@
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\title{OpenDevin Project Dependency Report}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Dependency Graph}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{/mnt/data/dependency_graph_improved.png}
+    \caption{Dependency Graph for OpenDevin Project}
+\end{figure}
+
+\newpage
+\section*{Provided Images}
+
+\subsection*{SVG Image}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{/mnt/data/opendevin_svg.png}
+    \caption{SVG Representation}
+\end{figure}
+
+\newpage
+\subsection*{PNG Image}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{/mnt/data/opendevin-top_folder.png}
+    \caption{PNG Representation}
+\end{figure}
+
+\newpage
+\section*{Dependency List for OpenDevin Project}
+\begin{verbatim}
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/__init__.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/__init__.py:
+  - .agent_controller
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/action_parser.py:
+  - abc
+  - opendevin.events.action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/agent.py:
+  - abc
+  - typing
+  - opendevin.controller.state.state
+  - opendevin.events.action
+  - opendevin.core.exceptions
+  - opendevin.llm.llm
+  - opendevin.runtime.plugins
+  - opendevin.runtime.tools
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/agent_controller.py:
+  - asyncio
+  - traceback
+  - typing
+  - opendevin.controller.agent
+  - opendevin.controller.state.state
+  - opendevin.controller.stuck
+  - opendevin.core.config
+  - opendevin.core.exceptions
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.events
+  - opendevin.events.action
+  - opendevin.events.event
+  - opendevin.events.observation
+  - opendevin.llm.llm
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/stuck.py:
+  - typing
+  - opendevin.controller.state.state
+  - opendevin.core.logger
+  - opendevin.events.action.action
+  - opendevin.events.action.empty
+  - opendevin.events.action.message
+  - opendevin.events.event
+  - opendevin.events.observation.commands
+  - opendevin.events.observation.empty
+  - opendevin.events.observation.error
+  - opendevin.events.observation.observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/state/state.py:
+  - base64
+  - pickle
+  - dataclasses
+  - enum
+  - opendevin.controller.state.task
+  - opendevin.core.logger
+  - opendevin.core.metrics
+  - opendevin.core.schema
+  - opendevin.events.action
+  - opendevin.events.action.agent
+  - opendevin.memory.history
+  - opendevin.storage
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/controller/state/task.py:
+  - opendevin.core.exceptions
+  - opendevin.core.logger
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/config.py:
+  - argparse
+  - logging
+  - os
+  - pathlib
+  - platform
+  - uuid
+  - dataclasses
+  - enum
+  - types
+  - typing
+  - toml
+  - dotenv
+  - opendevin.core.utils
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/download.py:
+  - agenthub
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/exceptions.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/logger.py:
+  - logging
+  - os
+  - re
+  - sys
+  - traceback
+  - datetime
+  - typing
+  - termcolor
+  - opendevin.core.config
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/main.py:
+  - asyncio
+  - os
+  - sys
+  - typing
+  - agenthub
+  - opendevin.controller
+  - opendevin.controller.agent
+  - opendevin.controller.state.state
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.events
+  - opendevin.events.action
+  - opendevin.events.event
+  - opendevin.events.observation
+  - opendevin.llm.llm
+  - opendevin.runtime
+  - opendevin.runtime.sandbox
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/metrics.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/const/guide_url.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/schema/__init__.py:
+  - .action
+  - .agent
+  - .config
+  - .observation
+  - .stream
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/schema/action.py:
+  - pydantic
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/schema/agent.py:
+  - enum
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/schema/config.py:
+  - enum
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/schema/observation.py:
+  - pydantic
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/schema/stream.py:
+  - abc
+  - typing
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/utils/__init__.py:
+  - .singleton
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/utils/json.py:
+  - json
+  - datetime
+  - json_repair
+  - opendevin.core.exceptions
+  - opendevin.events.event
+  - opendevin.events.serialization
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/core/utils/singleton.py:
+  - dataclasses
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/__init__.py:
+  - .event
+  - .stream
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/event.py:
+  - datetime
+  - dataclasses
+  - enum
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/stream.py:
+  - asyncio
+  - json
+  - threading
+  - datetime
+  - enum
+  - typing
+  - opendevin.core.logger
+  - opendevin.events.serialization.event
+  - opendevin.storage
+  - .event
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/__init__.py:
+  - .action
+  - .agent
+  - .browse
+  - .commands
+  - .empty
+  - .files
+  - .message
+  - .tasks
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/action.py:
+  - dataclasses
+  - enum
+  - typing
+  - opendevin.events.event
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/agent.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/browse.py:
+  - dataclasses
+  - typing
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/commands.py:
+  - dataclasses
+  - typing
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/empty.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/files.py:
+  - dataclasses
+  - typing
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/message.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/action/tasks.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .action
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/__init__.py:
+  - .agent
+  - .browse
+  - .commands
+  - .delegate
+  - .empty
+  - .error
+  - .files
+  - .observation
+  - .reject
+  - .success
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/agent.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/browse.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/commands.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/delegate.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/empty.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/error.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/files.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/observation.py:
+  - dataclasses
+  - opendevin.events.event
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/reject.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/observation/success.py:
+  - dataclasses
+  - opendevin.core.schema
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/serialization/__init__.py:
+  - .action
+  - .event
+  - .observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/serialization/action.py:
+  - opendevin.core.exceptions
+  - opendevin.events.action.action
+  - opendevin.events.action.agent
+  - opendevin.events.action.browse
+  - opendevin.events.action.commands
+  - opendevin.events.action.empty
+  - opendevin.events.action.files
+  - opendevin.events.action.message
+  - opendevin.events.action.tasks
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/serialization/event.py:
+  - dataclasses
+  - datetime
+  - opendevin.events
+  - opendevin.events.observation.observation
+  - .action
+  - .observation
+  - .utils
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/serialization/observation.py:
+  - opendevin.events.observation.agent
+  - opendevin.events.observation.browse
+  - opendevin.events.observation.commands
+  - opendevin.events.observation.delegate
+  - opendevin.events.observation.empty
+  - opendevin.events.observation.error
+  - opendevin.events.observation.files
+  - opendevin.events.observation.observation
+  - opendevin.events.observation.reject
+  - opendevin.events.observation.success
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/events/serialization/utils.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/llm/bedrock.py:
+  - os
+  - boto3
+  - opendevin.core.config
+  - opendevin.core.logger
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/llm/llm.py:
+  - warnings
+  - functools
+  - litellm
+  - litellm
+  - litellm
+  - litellm.exceptions
+  - litellm.types.utils
+  - tenacity
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.logger
+  - opendevin.core.metrics
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/memory/__init__.py:
+  - .condenser
+  - .history
+  - .memory
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/memory/condenser.py:
+  - opendevin.core.logger
+  - opendevin.llm.llm
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/memory/history.py:
+  - typing
+  - opendevin.core.logger
+  - opendevin.events.action.action
+  - opendevin.events.action.agent
+  - opendevin.events.action.empty
+  - opendevin.events.action.message
+  - opendevin.events.event
+  - opendevin.events.observation.agent
+  - opendevin.events.observation.commands
+  - opendevin.events.observation.delegate
+  - opendevin.events.observation.empty
+  - opendevin.events.observation.observation
+  - opendevin.events.serialization.event
+  - opendevin.events.stream
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/memory/memory.py:
+  - threading
+  - chromadb
+  - llama_index.embeddings.openai.base
+  - llama_index.core
+  - llama_index.core.retrievers
+  - llama_index.vector_stores.chroma
+  - openai._exceptions
+  - tenacity
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.utils
+  - llama_index.embeddings.ollama
+  - llama_index.embeddings.openai
+  - llama_index.embeddings.azure_openai
+  - llama_index.embeddings.huggingface
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/__init__.py:
+  - .docker.local_box
+  - .docker.ssh_box
+  - .e2b.sandbox
+  - .sandbox
+  - .server.runtime
+  - .client.runtime
+  - .e2b.runtime
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/process.py:
+  - abc
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/runtime.py:
+  - asyncio
+  - atexit
+  - abc
+  - typing
+  - opendevin.events
+  - opendevin.events.action
+  - opendevin.events.event
+  - opendevin.events.observation
+  - opendevin.events.serialization.action
+  - opendevin.runtime.plugins
+  - opendevin.runtime.tools
+  - opendevin.storage
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/sandbox.py:
+  - json
+  - os
+  - abc
+  - opendevin.core.config
+  - opendevin.core.schema
+  - opendevin.runtime.plugins.mixin
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/tools.py:
+  - enum
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/browser/__init__.py:
+  - .utils
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/browser/browser_env.py:
+  - atexit
+  - base64
+  - io
+  - json
+  - multiprocessing
+  - os
+  - threading
+  - time
+  - uuid
+  - browsergym.core
+  - gymnasium
+  - html2text
+  - numpy
+  - browsergym.utils.obs
+  - PIL
+  - opendevin.core.exceptions
+  - opendevin.core.logger
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/browser/utils.py:
+  - os
+  - opendevin.core.exceptions
+  - opendevin.core.schema
+  - opendevin.events.action
+  - opendevin.events.observation
+  - opendevin.runtime.browser.browser_env
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/client/client.py:
+  - argparse
+  - asyncio
+  - os
+  - pathlib
+  - pexpect
+  - fastapi
+  - pydantic
+  - uvicorn
+  - opendevin.core.logger
+  - opendevin.events.action
+  - opendevin.events.observation
+  - opendevin.events.serialization
+  - opendevin.runtime.browser
+  - opendevin.runtime.browser.browser_env
+  - opendevin.runtime.plugins
+  - opendevin.runtime.server.files
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/client/runtime.py:
+  - asyncio
+  - uuid
+  - typing
+  - aiohttp
+  - docker
+  - tenacity
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.events
+  - opendevin.events.action
+  - opendevin.events.action.action
+  - opendevin.events.event
+  - opendevin.events.observation
+  - opendevin.events.serialization
+  - opendevin.events.serialization.action
+  - opendevin.runtime.plugins
+  - opendevin.runtime.runtime
+  - opendevin.runtime.utils
+  - opendevin.runtime.utils.image_agnostic
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/client/mock_test/client.py:
+  - asyncio
+  - websockets
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/client/mock_test/echo_server.py:
+  - asyncio
+  - websockets
+  - pexpect
+  - websockets.exceptions
+  - json
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/client/mock_test/execute_server.py:
+  - asyncio
+  - websockets
+  - pexpect
+  - websockets.exceptions
+  - json
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/docker/__init__.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/docker/local_box.py:
+  - atexit
+  - os
+  - subprocess
+  - sys
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.runtime.sandbox
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/docker/ssh_box.py:
+  - atexit
+  - os
+  - re
+  - sys
+  - tarfile
+  - tempfile
+  - time
+  - uuid
+  - glob
+  - docker
+  - pexpect
+  - tenacity
+  - opendevin.core.config
+  - opendevin.core.const.guide_url
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.runtime.plugins
+  - opendevin.runtime.sandbox
+  - opendevin.runtime.utils
+  - opendevin.runtime.utils.image_agnostic
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/e2b/filestore.py:
+  - opendevin.storage.files
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/e2b/runtime.py:
+  - opendevin.events.action
+  - opendevin.events.observation
+  - opendevin.events.stream
+  - opendevin.runtime
+  - opendevin.runtime.server.files
+  - opendevin.runtime.server.runtime
+  - .filestore
+  - .sandbox
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/e2b/sandbox.py:
+  - os
+  - tarfile
+  - glob
+  - e2b
+  - e2b.sandbox.exception
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.runtime.sandbox
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/__init__.py:
+  - .agent_skills
+  - .jupyter
+  - .mixin
+  - .requirement
+  - .swe_agent_commands
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/mixin.py:
+  - os
+  - typing
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.runtime.plugins.requirement
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/requirement.py:
+  - abc
+  - dataclasses
+  - opendevin.events.action
+  - opendevin.events.observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/agent_skills/__init__.py:
+  - os
+  - dataclasses
+  - opendevin.runtime.plugins.agent_skills.agentskills
+  - opendevin.runtime.plugins.requirement
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/agent_skills/agentskills.py:
+  - base64
+  - functools
+  - os
+  - re
+  - shutil
+  - subprocess
+  - tempfile
+  - inspect
+  - typing
+  - docx
+  - PyPDF2
+  - openai
+  - pptx
+  - pylatexenc.latex2text
+  - cv2
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/jupyter/__init__.py:
+  - os
+  - subprocess
+  - time
+  - dataclasses
+  - opendevin.events.action
+  - opendevin.events.observation
+  - opendevin.runtime.plugins.requirement
+  - opendevin.runtime.utils
+  - .execute_server
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/jupyter/execute_cli.py:
+  - os
+  - sys
+  - time
+  - traceback
+  - requests
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/jupyter/execute_server.py:
+  - asyncio
+  - logging
+  - os
+  - re
+  - uuid
+  - tornado
+  - tornado.escape
+  - tornado.httpclient
+  - tornado.ioloop
+  - tornado.websocket
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/swe_agent_commands/__init__.py:
+  - os
+  - dataclasses
+  - opendevin.runtime.plugins.requirement
+  - opendevin.runtime.plugins.swe_agent_commands.parse_commands
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/plugins/swe_agent_commands/parse_commands.py:
+  - dataclasses
+  - yaml
+  - sys
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/server/files.py:
+  - os
+  - pathlib
+  - opendevin.core.config
+  - opendevin.events.observation
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/server/runtime.py:
+  - typing
+  - opendevin.core.config
+  - opendevin.core.exceptions
+  - opendevin.core.logger
+  - opendevin.events.action
+  - opendevin.events.observation
+  - opendevin.events.stream
+  - opendevin.runtime
+  - opendevin.runtime.browser.browser_env
+  - opendevin.runtime.plugins
+  - opendevin.runtime.runtime
+  - opendevin.runtime.tools
+  - opendevin.storage.local
+  - ..browser
+  - .files
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/utils/__init__.py:
+  - .system
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/utils/image_agnostic.py:
+  - os
+  - shutil
+  - tempfile
+  - docker
+  - opendevin.core.logger
+  - .source
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/utils/singleton.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/utils/source.py:
+  - os
+  - subprocess
+  - importlib.metadata
+  - opendevin
+  - opendevin.core.logger
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/runtime/utils/system.py:
+  - socket
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/__init__.py:
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/listen.py:
+  - os
+  - re
+  - uuid
+  - warnings
+  - requests
+  - pathspec
+  - pathspec.patterns
+  - opendevin.server.data_models.feedback
+  - litellm
+  - fastapi
+  - fastapi.middleware.cors
+  - fastapi.responses
+  - fastapi.security
+  - fastapi.staticfiles
+  - agenthub
+  - opendevin.controller.agent
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.events.action
+  - opendevin.events.observation
+  - opendevin.events.serialization
+  - opendevin.llm
+  - opendevin.server.auth
+  - opendevin.server.session
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/auth/__init__.py:
+  - .auth
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/auth/auth.py:
+  - jwt
+  - jwt.exceptions
+  - opendevin.core.config
+  - opendevin.core.logger
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/data_models/feedback.py:
+  - json
+  - typing
+  - requests
+  - pydantic
+  - opendevin.core.logger
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/mock/listen.py:
+  - uvicorn
+  - fastapi
+  - opendevin.core.schema
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/session/__init__.py:
+  - .manager
+  - .session
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/session/agent.py:
+  - typing
+  - agenthub.codeact_agent.codeact_agent
+  - opendevin.controller
+  - opendevin.controller.agent
+  - opendevin.controller.state.state
+  - opendevin.core.config
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.events.stream
+  - opendevin.llm.llm
+  - opendevin.runtime
+  - opendevin.runtime.runtime
+  - opendevin.runtime.server.runtime
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/session/manager.py:
+  - asyncio
+  - time
+  - typing
+  - fastapi
+  - opendevin.core.logger
+  - .session
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/server/session/session.py:
+  - asyncio
+  - time
+  - fastapi
+  - opendevin.core.const.guide_url
+  - opendevin.core.logger
+  - opendevin.core.schema
+  - opendevin.core.schema.action
+  - opendevin.events.action
+  - opendevin.events.event
+  - opendevin.events.observation
+  - opendevin.events.serialization
+  - opendevin.events.stream
+  - .agent
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/storage/__init__.py:
+  - opendevin.core.config
+  - .files
+  - .local
+  - .memory
+  - .s3
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/storage/files.py:
+  - abc
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/storage/local.py:
+  - os
+  - shutil
+  - opendevin.core.logger
+  - .files
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/storage/memory.py:
+  - os
+  - opendevin.core.logger
+  - .files
+
+/mnt/data/OpenDevin-main/OpenDevin-main/opendevin/storage/s3.py:
+  - os
+  - minio
+  - .files
+
+
+\end{verbatim}
+
+\end{document}
