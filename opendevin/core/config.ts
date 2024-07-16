@@ -1,9 +1,9 @@
 import { ArgumentParser } from 'argparse';
-import { getLogger } from 'log4js'; // log4js instead of logging
+import { getLogger } from 'log4js';
 import { resolve, join } from 'node:path';
-import { platform } from 'node:os';
+import { platform, userInfo } from 'node:os';
 import { v4 as uuidv4 } from 'uuid';
-import { parse as parseToml } from '@iarna/toml'; // use @iarna/toml for better TypeScript support
+import { parse as parseToml } from '@iarna/toml';
 import { config as dotenvConfig } from 'dotenv';
 import { Singleton } from './utils/singleton';
 
@@ -138,7 +138,7 @@ interface ISandboxConfig {
 class SandboxConfig implements ISandboxConfig {
     boxType: string = 'ssh';
     containerImage: string = `ghcr.io/opendevin/sandbox:${process.env.OPEN_DEVIN_BUILD_VERSION || 'main'}`;
-    userId: number = typeof process.getuid === 'function' ? process.getuid() : 1000;
+    userId: number = userInfo().uid;
     timeout: number = 120;
 
     defaultsToDict(): Record<string, IFieldInfo> {
@@ -196,6 +196,7 @@ interface IAppConfig {
     fileUploadsAllowedExtensions: string[];
 }
 
+@Singleton
 class AppConfig implements IAppConfig {
     llms: Record<string, LLMConfig> = {};
     agents: Record<string, AgentConfig> = {};
@@ -412,7 +413,7 @@ function loadFromToml(cfg: AppConfig, tomlFile: string = 'config.toml') {
 
             if ('sandbox' in tomlConfig) {
                 const newSandboxConfig = new SandboxConfig(tomlConfig['sandbox']);
-                config.sandbox = newSandboxConfig;
+                AppConfig.sandbox = newSandboxConfig;
             }
         } catch (e) {
             logger.warn(`Cannot parse config from toml, toml values have not been applied.\nError: ${e}`);
@@ -461,7 +462,7 @@ loadFromEnv(config, process.env);
 finalizeConfig(config);
 
 function getLlmConfigArg(llmConfigArg: string, tomlFile: string = 'config.toml'): LLMConfig | null {
-    llmConfigArg = llmConfigArg.trim('[]');
+    llmConfigArg = llmConfigArg.trim();
 
     if (llmConfigArg.startsWith('llm.')) {
         llmConfigArg = llmConfigArg.slice(4);
@@ -501,7 +502,7 @@ function getParser(): ArgumentParser {
     return parser;
 }
 
-function parseArguments(): any {
+function parseArguments(): argparse.Namespace {
     const parser = getParser();
     const parsedArgs = parser.parse_args();
 
