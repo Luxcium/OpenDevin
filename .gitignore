@@ -217,3 +217,9 @@ containers/agnostic_sandbox
 # swe-bench-eval
 image_build_logs
 run_instance_logs
+
+node_modules/
+out
+dist
+build
+lib
