@@ -1,4 +1,3 @@
-import { ArgumentParser } from 'argparse';
 import { getLogger } from 'log4js';
 import { resolve, join } from 'node:path';
 import { platform, userInfo } from 'node:os';
@@ -7,6 +6,7 @@ import { parse as parseToml } from '@iarna/toml';
 import { config as dotenvConfig } from 'dotenv';
 import { Singleton } from './utils/singleton';
 import { mkdirSync, readFileSync } from 'node:fs';
+import { Command, OptionValues } from 'commander';
 
 dotenvConfig();
 
@@ -109,6 +109,7 @@ class LLMConfig implements ILLMConfig {
     return this.toString();
   }
 }
+
 interface IAgentConfig {
   memoryEnabled: boolean;
   memoryMaxThreads: number;
@@ -135,19 +136,12 @@ class AgentConfig implements IAgentConfig {
   }
 }
 
-// function getFieldInfo(field: any): IFieldInfo {
-//     return {
-//         type: typeof field,
-//         optional: field === undefined,
-//         default: field
-//     };
-// }
-
 interface ISandboxConfig {
   boxType: string;
   containerImage: string;
   userId: number;
   timeout: number;
+  [key: string]: any;
 }
 
 class SandboxConfig implements ISandboxConfig {
@@ -324,15 +318,14 @@ const config = new AppConfig();
 
 function loadFromEnv(cfg: AppConfig, envOrTomlDict: Record<string, any>) {
   function getOptionalType(unionType: UnionType): any {
-    // @ts-ignore
-    return unionType.find((t: any) => t !== null);
+    return unionType;
   }
 
   function setAttrFromEnv(subConfig: any, prefix = '') {
     for (let [fieldName, fieldType] of Object.entries(subConfig)) {
       const envVarName = (prefix + fieldName).toUpperCase();
 
-      if (typeof fieldType === 'object') {
+      if (typeof fieldType === 'object' && !Array.isArray(fieldType)) {
         const nestedSubConfig = subConfig[fieldName];
         setAttrFromEnv(nestedSubConfig, fieldName + '_');
       } else if (envVarName in envOrTomlDict) {
@@ -345,8 +338,10 @@ function loadFromEnv(cfg: AppConfig, envOrTomlDict: Record<string, any>) {
           let castValue;
           if (typeof fieldType === 'boolean') {
             castValue = String(value).toLowerCase() === 'true';
-          } else {
+          } else if (typeof fieldType === 'function') {
             castValue = fieldType(value);
+          } else {
+            castValue = value;
           }
           subConfig[fieldName] = castValue;
         } catch (e) {
@@ -502,27 +497,29 @@ function getLlmConfigArg(llmConfigArg: string, tomlFile: string = 'config.toml')
   return null;
 }
 
-function getParser(): ArgumentParser {
-  const parser = new ArgumentParser({
-    description: 'Run an agent with a specific task'
-  });
-  parser.add_argument('-d', '--directory', { type: 'str', help: 'The working directory for the agent' });
-  parser.add_argument('-t', '--task', { type: 'str', default: '', help: 'The task for the agent to perform' });
-  parser.add_argument('-f', '--file', { type: 'str', help: 'Path to a file containing the task. Overrides -t if both are provided.' });
-  parser.add_argument('-c', '--agent-cls', { default: config.defaultAgent, type: 'str', help: 'Name of the default agent to use' });
-  parser.add_argument('-i', '--max-iterations', { default: config.maxIterations, type: 'int', help: 'The maximum number of iterations to run the agent' });
-  parser.add_argument('-b', '--max-budget-per-task', { default: config.maxBudgetPerTask, type: 'float', help: 'The maximum budget allowed per task, beyond which the agent will stop.' });
-  parser.add_argument('--eval-output-dir', { default: 'evaluation/evaluation_outputs/outputs', type: 'str', help: 'The directory to save evaluation output' });
-  parser.add_argument('--eval-n-limit', { default: null, type: 'int', help: 'The number of instances to evaluate' });
-  parser.add_argument('--eval-num-workers', { default: 4, type: 'int', help: 'The number of workers to use for evaluation' });
-  parser.add_argument('--eval-note', { default: null, type: 'str', help: 'The note to add to the evaluation directory' });
-  parser.add_argument('-l', '--llm-config', { default: null, type: 'str', help: 'The group of llm settings, e.g. "llama3" for [llm.llama3] section in the toml file. Overrides model if both are provided.' });
-  return parser;
+function getParser(): Command {
+  const program = new Command();
+
+  program
+    .option('-d, --directory <directory>', 'The working directory for the agent')
+    .option('-t, --task <task>', 'The task for the agent to perform', '')
+    .option('-f, --file <file>', 'Path to a file containing the task. Overrides -t if both are provided.')
+    .option('-c, --agent-cls <agentCls>', 'Name of the default agent to use', config.defaultAgent)
+    .option('-i, --max-iterations <maxIterations>', 'The maximum number of iterations to run the agent', config.maxIterations.toString())
+    .option('-b, --max-budget-per-task <maxBudgetPerTask>', 'The maximum budget allowed per task, beyond which the agent will stop.', config.maxBudgetPerTask?.toString())
+    .option('--eval-output-dir <evalOutputDir>', 'The directory to save evaluation output', 'evaluation/evaluation_outputs/outputs')
+    .option('--eval-n-limit <evalNLimit>', 'The number of instances to evaluate')
+    .option('--eval-num-workers <evalNumWorkers>', 'The number of workers to use for evaluation', '4')
+    .option('--eval-note <evalNote>', 'The note to add to the evaluation directory')
+    .option('-l, --llm-config <llmConfig>', 'The group of llm settings, e.g. "llama3" for [llm.llama3] section in the toml file. Overrides model if both are provided.');
+
+  return program;
 }
 
-function parseArguments(): argparse.Namespace {
+function parseArguments(): OptionValues {
   const parser = getParser();
-  const parsedArgs = parser.parse_args();
+  parser.parse(process.argv);
+  const parsedArgs = parser.opts();
 
   if (parsedArgs.directory) {
     config.workspaceBase = resolve(parsedArgs.directory);
@@ -543,5 +540,5 @@ export {
   finalizeConfig,
   getLlmConfigArg,
   getParser,
-  parseArguments
+  parseArguments, config
 };

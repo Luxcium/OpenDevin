@@ -27,7 +27,7 @@ Best practices:
 
 
 import { Event, eventToDict } from '../events/event';
-import { LLMResponseError } from './exceptions';
+import { LLMResponseError } from '../exceptions';
 
 // TODO: Implement or import a JSON repair function
 // import { repairJson } from 'json-repair';
