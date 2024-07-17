@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "OpenDevin/opendevin/**/*.ts",
+    "OpenDevin/opendevin/**/*.tsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    ".eslintrc.js"
+  ]
+}
