@@ -1,0 +1,181 @@
+/src/OpenDevin/opendevin
+├── controller
+│   ├── action_parser.py
+│   ├── agent_controller.py
+│   ├── agent.py
+│   ├── __init__.py
+│   ├── state
+│   │   ├── state.py
+│   │   ├── state.ts
+│   │   ├── task.py
+│   │   └── task.ts
+│   └── stuck.py
+├── core
+│   ├── config.py
+│   ├── config.ts
+│   ├── const
+│   │   ├── guide_url.py
+│   │   └── guideUrl.ts
+│   ├── download.py
+│   ├── exceptions.py
+│   ├── exceptions.ts
+│   ├── logger-deleteme.ts
+│   ├── logger.py
+│   ├── logger.ts
+│   ├── main.py
+│   ├── metrics.py
+│   ├── metrics.ts
+│   ├── schema
+│   │   ├── action.py
+│   │   ├── action.ts
+│   │   ├── agent.py
+│   │   ├── agent.ts
+│   │   ├── config.py
+│   │   ├── config.ts
+│   │   ├── index.ts
+│   │   ├── __init__.py
+│   │   ├── observation.py
+│   │   ├── observation.ts
+│   │   ├── stream.py
+│   │   └── stream.ts
+│   ├── text-document.ts.txt
+│   ├── text-ducument.py.txt
+│   └── utils
+│       ├── index.ts
+│       ├── __init__.py
+│       ├── json.py
+│       ├── json.ts
+│       ├── singleton.py
+│       └── singleton.ts
+├── events
+│   ├── action
+│   │   ├── action.py
+│   │   ├── agent.py
+│   │   ├── browse.py
+│   │   ├── commands.py
+│   │   ├── empty.py
+│   │   ├── files.py
+│   │   ├── __init__.py
+│   │   ├── message.py
+│   │   └── tasks.py
+│   ├── event.py
+│   ├── __init__.py
+│   ├── observation
+│   │   ├── agent.py
+│   │   ├── browse.py
+│   │   ├── commands.py
+│   │   ├── delegate.py
+│   │   ├── empty.py
+│   │   ├── error.py
+│   │   ├── files.py
+│   │   ├── __init__.py
+│   │   ├── observation.py
+│   │   ├── reject.py
+│   │   └── success.py
+│   ├── serialization
+│   │   ├── action.py
+│   │   ├── event.py
+│   │   ├── __init__.py
+│   │   ├── observation.py
+│   │   └── utils.py
+│   └── stream.py
+├── file_structure.txt
+├── __init__.py
+├── llm
+│   ├── bedrock.py
+│   └── llm.py
+├── memory
+│   ├── condenser.py
+│   ├── history.py
+│   ├── __init__.py
+│   ├── memory.py
+│   └── README.md
+├── README.md
+├── runtime
+│   ├── browser
+│   │   ├── browser_env.py
+│   │   ├── __init__.py
+│   │   └── utils.py
+│   ├── client
+│   │   ├── client.py
+│   │   ├── mock_test
+│   │   │   ├── client.py
+│   │   │   ├── echo_server.py
+│   │   │   └── execute_server.py
+│   │   └── runtime.py
+│   ├── docker
+│   │   ├── __init__.py
+│   │   ├── local_box.py
+│   │   └── ssh_box.py
+│   ├── e2b
+│   │   ├── filestore.py
+│   │   ├── README.md
+│   │   ├── runtime.py
+│   │   └── sandbox.py
+│   ├── __init__.py
+│   ├── plugins
+│   │   ├── agent_skills
+│   │   │   ├── agentskills.py
+│   │   │   ├── __init__.py
+│   │   │   ├── README.md
+│   │   │   └── setup.sh
+│   │   ├── __init__.py
+│   │   ├── jupyter
+│   │   │   ├── execute_cli
+│   │   │   ├── execute_cli.py
+│   │   │   ├── execute_server.py
+│   │   │   ├── __init__.py
+│   │   │   └── setup.sh
+│   │   ├── mixin.py
+│   │   ├── requirement.py
+│   │   └── swe_agent_commands
+│   │       ├── cursors_defaults.sh
+│   │       ├── cursors_edit_linting.sh
+│   │       ├── defaults.sh
+│   │       ├── edit_linting.sh
+│   │       ├── __init__.py
+│   │       ├── parse_commands.py
+│   │       ├── search.sh
+│   │       ├── _setup_cursor_mode_env.sh
+│   │       ├── setup_cursor_mode.sh
+│   │       ├── _setup_default_env.sh
+│   │       ├── setup_default.sh
+│   │       └── _split_string
+│   ├── process.py
+│   ├── runtime.py
+│   ├── sandbox.py
+│   ├── server
+│   │   ├── files.py
+│   │   └── runtime.py
+│   ├── tools.py
+│   └── utils
+│       ├── image_agnostic.py
+│       ├── __init__.py
+│       ├── runtime_build.py
+│       ├── singleton.py
+│       └── system.py
+├── server
+│   ├── auth
+│   │   ├── auth.py
+│   │   └── __init__.py
+│   ├── data_models
+│   │   └── feedback.py
+│   ├── __init__.py
+│   ├── listen.py
+│   ├── mock
+│   │   ├── listen.py
+│   │   └── README.md
+│   ├── README.md
+│   └── session
+│       ├── agent.py
+│       ├── __init__.py
+│       ├── manager.py
+│       └── session.py
+└── storage
+    ├── files.py
+    ├── __init__.py
+    ├── local.py
+    ├── memory.py
+    └── s3.py
+
+31 directories, 148 files
